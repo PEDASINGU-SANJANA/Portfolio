@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pedasingu Sanjana - Portfolio</title>
+<link rel="stylesheet" href="style.css">
+<script defer src="script.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- Futuristic Background -->
+<div class="background">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+</div>
+
+<!-- Dashboard -->
+<div class="dashboard">
+    <div class="profile-card">
+        <img src="profile.jpg" alt="Profile Picture">
+        <h1>Pedasingu Sanjana</h1>
+        <p>Computer Science Student | Aspiring Software Engineer</p>
+        
+        <!-- Download Resume Button -->
+        <a href="resume.pdf" download class="download-btn">
+            <i class="fas fa-download"></i>  Resume
+        </a>
+    </div>
+
+    <div class="menu">
+        <button class="menu-btn" data-section="skills"><i class="fas fa-code"></i><span>Skills</span></button>
+        <button class="menu-btn" data-section="education"><i class="fas fa-graduation-cap"></i><span>Education</span></button>
+        <button class="menu-btn" data-section="projects"><i class="fas fa-project-diagram"></i><span>Projects</span></button>
+        <button class="menu-btn" data-section="achievements"><i class="fas fa-trophy"></i><span>Achievements</span></button>
+        <button class="menu-btn" data-section="contact"><i class="fas fa-envelope"></i><span>Contact</span></button>
+    </div>
+</div>
+
+<!-- Centered Modal -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="modal-body"></div>
+    </div>
+</div>
+
+</body>
+</html>
