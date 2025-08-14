@@ -2,57 +2,12 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     color: white;
-    overflow: hidden;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* Elegant deep blue gradient */
+    background-attachment: fixed;
+    overflow-x: hidden;
 }
 
-/* Background */
-.background {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at center, rgba(0,0,0,0.7) 0%, #000 100%);
-    overflow: hidden;
-    z-index: -1;
-}
-
-.background::before {
-    content: '';
-    position: absolute;
-    width: 200%;
-    height: 200%;
-    background: conic-gradient(#b3003c, #ffcc66, #ff0066, #b3003c);
-    animation: rotate 20s linear infinite;
-    filter: blur(150px);
-    opacity: 0.6;
-}
-
-@keyframes rotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
-/* Floating particles */
-@keyframes float {
-    0% { transform: translateY(0) translateX(0); opacity: 0.7; }
-    50% { transform: translateY(-50px) translateX(30px); opacity: 1; }
-    100% { transform: translateY(0) translateX(0); opacity: 0.7; }
-}
-
-.particle {
-    position: absolute;
-    background: white;
-    border-radius: 50%;
-    opacity: 0.7;
-    animation: float 6s ease-in-out infinite;
-}
-
-.particle:nth-child(1) { width: 5px; height: 5px; top: 20%; left: 10%; animation-delay: 0s; }
-.particle:nth-child(2) { width: 8px; height: 8px; top: 50%; left: 30%; animation-delay: 2s; }
-.particle:nth-child(3) { width: 6px; height: 6px; top: 70%; left: 70%; animation-delay: 4s; }
-.particle:nth-child(4) { width: 10px; height: 10px; top: 40%; left: 80%; animation-delay: 1s; }
-.particle:nth-child(5) { width: 7px; height: 7px; top: 85%; left: 20%; animation-delay: 3s; }
-
-/* Dashboard styling */
+/* Dashboard */
 .dashboard {
     display: flex;
     flex-direction: column;
@@ -62,61 +17,47 @@ body {
 
 .profile-card {
     text-align: center;
-    background: rgba(0,0,0,0.6);
+    background: white;
     padding: 20px;
     border-radius: 20px;
-    box-shadow: 0 0 20px rgba(255,255,255,0.5);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
 }
 
 .profile-card img {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    border: 4px solid #ffcc66;
-    box-shadow: 0 0 15px #ffcc66, 0 0 25px #ff0066, 0 0 35px #b3003c;
-    animation: imgGlow 2s infinite alternate;
-}
-
-/* Glowing Profile Image Animation */
-@keyframes imgGlow {
-    0% { box-shadow: 0 0 15px #ffcc66, 0 0 25px #ff0066, 0 0 35px #b3003c; }
-    50% { box-shadow: 0 0 25px #ffcc66, 0 0 40px #ff0066, 0 0 60px #b3003c; }
-    100% { box-shadow: 0 0 15px #ffcc66, 0 0 25px #ff0066, 0 0 35px #b3003c; }
+    border: 3px solid #2c5364;
 }
 
 .profile-card h1 {
     font-size: 28px;
-    color: white;
-    animation: nameGlow 2s infinite alternate;
+    color: #222;
 }
 
-/* Glowing Name Animation */
-@keyframes nameGlow {
-    0% { text-shadow: 0 0 5px #ffcc66, 0 0 10px #ff0066, 0 0 15px #b3003c; }
-    50% { text-shadow: 0 0 10px #ffcc66, 0 0 20px #ff0066, 0 0 30px #b3003c; }
-    100% { text-shadow: 0 0 5px #ffcc66, 0 0 10px #ff0066, 0 0 15px #b3003c; }
+.profile-card p {
+    color: #555;
 }
 
-/* Download Resume Button */
+/* Resume Button */
 .download-btn {
     display: inline-block;
     margin-top: 15px;
     padding: 10px 20px;
-    background: linear-gradient(45deg, #ffcc66, #ff0066);
+    background: #1e3c72;
     color: white;
     font-size: 16px;
-    border-radius: 25px;
+    border-radius: 5px;
     text-decoration: none;
     font-weight: bold;
-    box-shadow: 0 0 10px rgba(255, 204, 102, 0.6), 0 0 15px rgba(255, 0, 102, 0.4);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: background 0.3s;
 }
 
 .download-btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(255, 204, 102, 0.9), 0 0 30px rgba(255, 0, 102, 0.7);
+    background: #2a5298;
 }
 
+/* Menu Buttons */
 .menu {
     display: flex;
     gap: 20px;
@@ -125,12 +66,11 @@ body {
     justify-content: center;
 }
 
-/* Menu Buttons with Glow Effect */
 .menu-btn {
-    background: rgba(255,255,255,0.1);
-    border: 2px solid transparent;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
     padding: 15px 25px;
-    border-radius: 15px;
+    border-radius: 8px;
     color: white;
     font-size: 16px;
     display: flex;
@@ -138,9 +78,7 @@ body {
     align-items: center;
     gap: 8px;
     cursor: pointer;
-    transition: transform 0.3s, background 0.3s, border 0.3s, box-shadow 0.3s;
-    position: relative;
-    overflow: hidden;
+    transition: background 0.3s, transform 0.2s;
 }
 
 .menu-btn i {
@@ -148,19 +86,11 @@ body {
 }
 
 .menu-btn:hover {
-    transform: scale(1.1);
-    background: rgba(255,255,255,0.15);
-    border: 2px solid #ffcc66;
-    animation: glowPulse 1.5s infinite alternate;
+    background: rgba(255,255,255,0.25);
+    transform: scale(1.05);
 }
 
-@keyframes glowPulse {
-    0% { box-shadow: 0 0 10px #ffcc66, 0 0 20px #ff0066, 0 0 30px #b3003c; }
-    50% { box-shadow: 0 0 20px #ffcc66, 0 0 40px #ff0066, 0 0 60px #b3003c; }
-    100% { box-shadow: 0 0 10px #ffcc66, 0 0 20px #ff0066, 0 0 30px #b3003c; }
-}
-
-/* Modal background */
+/* Modal */
 .modal {
     display: none;
     position: fixed;
@@ -172,10 +102,8 @@ body {
     background: rgba(0,0,0,0.6);
 }
 
-/* Centered Modal Box */
 .modal-content {
-    background: rgba(20, 20, 20, 0.95);
-    backdrop-filter: blur(10px);
+    background: white;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -185,14 +113,13 @@ body {
     width: 80%;
     max-width: 600px;
     padding: 25px;
-    color: white;
-    box-shadow: 0 0 25px rgba(255, 204, 102, 0.5),
-                0 0 40px rgba(255, 0, 102, 0.3);
-    border-radius: 20px;
+    color: #333;
+    border-radius: 10px;
     opacity: 0;
     transition: all 0.4s ease-in-out;
     overflow-y: auto;
     text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
 .modal.show .modal-content {
@@ -203,7 +130,7 @@ body {
 .modal-content h2 {
     font-size: 28px;
     margin-bottom: 15px;
-    text-shadow: 0 0 10px #ffcc66, 0 0 20px #ff0066;
+    color: #1e3c72;
 }
 
 .modal-content p, 
@@ -211,17 +138,16 @@ body {
 .modal-content a {
     font-size: 18px;
     line-height: 1.5;
-    color: #ddd;
+    color: #444;
 }
 
 .modal-content a {
-    color: #ffcc66;
+    color: #1e3c72;
     text-decoration: none;
-    transition: color 0.3s;
 }
 
 .modal-content a:hover {
-    color: #ff0066;
+    color: #2a5298;
 }
 
 .modal-content ul {
@@ -231,7 +157,7 @@ body {
 
 .modal-content li {
     padding: 5px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
 .projects-grid {
@@ -242,48 +168,38 @@ body {
 }
 
 .project-card {
-    background: rgba(255,255,255,0.05);
-    border-radius: 15px;
+    background: #f9f9f9;
+    border-radius: 10px;
     overflow: hidden;
     text-align: center;
-    box-shadow: 0 0 15px rgba(255, 204, 102, 0.2);
-    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .project-card img {
     width: 100%;
     height: 140px;
     object-fit: cover;
-    border-bottom: 2px solid rgba(255,255,255,0.1);
 }
 
 .project-card h3 {
     font-size: 18px;
     margin: 10px 0 5px;
+    color: #1e3c72;
 }
 
 .project-card p {
     font-size: 14px;
     padding: 0 10px 15px;
-    color: #ccc;
-}
-
-.project-card a {
-    color: #ffcc66;
-    text-decoration: none;
-}
-
-.project-card a:hover {
-    color: #ff0066;
-}
-
-.project-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 0 20px rgba(255, 204, 102, 0.4);
+    color: #666;
 }
 
 .close {
     float: right;
     font-size: 28px;
     cursor: pointer;
+    color: #666;
+}
+
+.close:hover {
+    color: #000;
 }
