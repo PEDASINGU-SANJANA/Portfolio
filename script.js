@@ -45,7 +45,7 @@ const sections = {
         <h2>Contact</h2>
         <p>Email: <a href="mailto:sanjanapedasingu@gmail.com">sanjanapedasingu@gmail.com</a></p>
         <p>Phone: <a href="tel:+918500791730">+91-8500791730</a></p>
-        <p><a href="mailto:sanjanapedasingu@gmail.com?subject=Hello%20Sanjana&body=Hi%20Sanjana," target="_blank">📧 Message via Email</a></p>
+        <p><a href="mailto:sanjanapedasingu@gmail.com?subject=Hello%20Sanjana&body=Hi%20Sanjana," target="_blank"> Message </a></p>
         <p><a href="https://www.linkedin.com/in/pedasingu-sanjana-ba79912ba" target="_blank">LinkedIn</a> | 
         <a href="https://github.com/PEDASINGU-SANJANA" target="_blank">GitHub</a></p>
     `
@@ -71,13 +71,3 @@ window.onclick = (event) => {
         setTimeout(() => modal.style.display = "none", 400);
     }
 };
-
-// Interactive Particle Movement
-document.addEventListener("mousemove", (e) => {
-    document.querySelectorAll(".particle").forEach((particle, index) => {
-        const speed = (index + 1) * 0.02;
-        const x = (window.innerWidth / 2 - e.pageX) * speed;
-        const y = (window.innerHeight / 2 - e.pageY) * speed;
-        particle.style.transform = `translate(${x}px, ${y}px)`;
-    });
-});
